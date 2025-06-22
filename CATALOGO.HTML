@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Catálogo | D'JULIA</title>
     <link rel="stylesheet" href="catalogo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
 <body>
     <div class="sidebar">
         <div class="logo-section">
@@ -45,33 +47,41 @@
                         <button class="cat-color-btn" data-category="PANES">
                             <img class="cat-color" src="icono-panes.png" alt="PANES">
                         </button>
-                        PANES (<span class="cat-count" data-category="PANES">3</span>)
+                        <span class="cat-label">PANES (<span class="cat-count" data-category="PANES">3</span>)</span>
+                        <span class="cat-actions"></span>
                         <i class="fa fa-pen"></i>
                         <i class="fa fa-trash"></i>
+                        </span>
                     </li>
                     <li>
                         <button class="cat-color-btn" data-category="POSTRES">
                             <img class="cat-color" src="icono-postres.png" alt="POSTRES">
                         </button>
-                        POSTRES (<span class="cat-count" data-category="POSTRES">4</span>)
-                        <i class="fa fa-pen"></i>
-                        <i class="fa fa-trash"></i>
+                        <span class="cat-label">POSTRES (<span class="cat-count" data-category="POSTRES">4</span>)</span>
+                        <span class="cat-actions"></span>
+                            <i class="fa fa-pen"></i>
+                            <i class="fa fa-trash"></i>
+                        </span>
                     </li>
                     <li>
                         <button class="cat-color-btn" data-category="CUCHAREABLES">
                             <img class="cat-color" src="icono-cuchareables.png" alt="CUCHAREABLES">
                         </button>
-                        CUCHAREABLES (<span class="cat-count" data-category="CUCHAREABLES">5</span>)
+                        <span class="cat-label">CUCHAREABLES (<span class="cat-count" data-category="CUCHAREABLES">5</span>)</span>
+                        <span class="cat-actions"></span>
                         <i class="fa fa-pen"></i>
                         <i class="fa fa-trash"></i>
+                        </span>
                     </li>
                     <li>
                         <button class="cat-color-btn" data-category="TORTAS">
                             <img class="cat-color" src="icono-tortas.png" alt="TORTAS">
                         </button>
-                        TORTAS (<span class="cat-count" data-category="TORTAS">4</span>)
+                        <span class="cat-label">TORTAS (<span class="cat-count" data-category="TORTAS">4</span>)</span>
+                        <span class="cat-actions"></span>
                         <i class="fa fa-pen"></i>
                         <i class="fa fa-trash"></i>
+                        </span>
                     </li>
                 </ul>
                 <div class="add-category">
@@ -92,6 +102,18 @@
                     <img src="pan3.jpg" alt="Mini artesanal Tanta Zara">
                     <div class="product-title">Mini artesanal Tanta Zara</div>
                 </div>
+                <div class="product-card" data-category="POSTRES" style="display:none">
+                    <img src="postre1.jpg" alt="Postre 1">
+                    <div class="product-title">Postre 1</div>
+                </div>
+                <div class="product-card" data-category="CUCHAREABLES" style="display:none">
+                    <img src="cuchareable1.jpg" alt="Cuchareable 1">
+                    <div class="product-title">Cuchareable 1</div>
+                </div>
+                <div class="product-card" data-category="TORTAS" style="display:none">
+                    <img src="torta1.jpg" alt="Torta 1">
+                    <div class="product-title">Torta 1</div>
+                </div>
             </div>
         </div>
         <footer>
@@ -106,4 +128,5 @@
     </div>
     <script src="catalogo.js"></script>
 </body>
+
 </html>

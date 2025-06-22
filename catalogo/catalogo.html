@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <title>Catálogo | D'JULIA</title>
     <link rel="stylesheet" href="catalogo.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Segoe+UI:400,700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
 <body>
@@ -46,61 +44,44 @@
                 <div class="categories-header">Categorías</div>
                 <ul class="categories-list">
                     <li>
-<<<<<<< HEAD:Loggin/catalogo/catalogo.html
-                        <button class="cat-color-btn" data-category="PANES"
-                            style="background:none;border:none;cursor:pointer;padding:0;">
-                            <img class="cat-color" src="icono-panes.png" alt="PANES"
-                                style="width:32px;height:32px;border-radius:5%;display:block;">
+                        <button class="cat-color-btn" data-category="PANES">
+                            <img class="cat-color" src="icono-panes.png" alt="PANES">
                         </button>
-                        PANES (<span class="cat-count" data-category="PANES">0</span>)
+                        <span class="cat-label">PANES (<span class="cat-count" data-category="PANES">3</span>)</span>
+                        <span class="cat-actions"></span>
                         <i class="fa fa-pen"></i>
-=======
-                        <span class="cat-color" style="background:#bdbdbd"></span>
-                        PANES (3)
-                        <button class="edit-category-btn" title="Editar categoría">
-                            <span class="material-icons" style="font-size:18px;">edit</span>
-                        </button>
->>>>>>> 194aaa9d813ec628a6d3a0b9c2b0bf0bf6b8592d:catalogo/catalogo.html
                         <i class="fa fa-trash"></i>
+                        </span>
                     </li>
                     <li>
-                        <span class="cat-color" style="background:#bdbdbd"></span>
-<<<<<<< HEAD:Loggin/catalogo/catalogo.html
-                        POSTRES (<span class="cat-count" data-category="POSTRES">0</span>)
-                        <i class="fa fa-pen"></i>
-=======
-                        POSTRES (4)
-                        <button class="edit-category-btn" title="Editar categoría">
-                            <span class="material-icons" style="font-size:18px;">edit</span>
+                        <button class="cat-color-btn" data-category="POSTRES">
+                            <img class="cat-color" src="icono-postres.png" alt="POSTRES">
                         </button>
->>>>>>> 194aaa9d813ec628a6d3a0b9c2b0bf0bf6b8592d:catalogo/catalogo.html
-                        <i class="fa fa-trash"></i>
+                        <span class="cat-label">POSTRES (<span class="cat-count" data-category="POSTRES">4</span>)</span>
+                        <span class="cat-actions"></span>
+                            <i class="fa fa-pen"></i>
+                            <i class="fa fa-trash"></i>
+                        </span>
                     </li>
                     <li>
-                        <span class="cat-color" style="background:#bdbdbd"></span>
-<<<<<<< HEAD:Loggin/catalogo/catalogo.html
-                        CUCHAREABLES (<span class="cat-count" data-category="CUCHAREABLES">0</span>)
-                        <i class="fa fa-pen"></i>
-=======
-                        CUCHAREABLES (5)
-                        <button class="edit-category-btn" title="Editar categoría">
-                            <span class="material-icons" style="font-size:18px;">edit</span>
+                        <button class="cat-color-btn" data-category="CUCHAREABLES">
+                            <img class="cat-color" src="icono-cuchareables.png" alt="CUCHAREABLES">
                         </button>
->>>>>>> 194aaa9d813ec628a6d3a0b9c2b0bf0bf6b8592d:catalogo/catalogo.html
+                        <span class="cat-label">CUCHAREABLES (<span class="cat-count" data-category="CUCHAREABLES">5</span>)</span>
+                        <span class="cat-actions"></span>
+                        <i class="fa fa-pen"></i>
                         <i class="fa fa-trash"></i>
+                        </span>
                     </li>
                     <li>
-                        <span class="cat-color" style="background:#bdbdbd"></span>
-<<<<<<< HEAD:Loggin/catalogo/catalogo.html
-                        TORTAS (<span class="cat-count" data-category="TORTAS">0</span>)
-                        <i class="fa fa-pen"></i>
-=======
-                        TORTAS (4)
-                        <button class="edit-category-btn" title="Editar categoría">
-                            <span class="material-icons" style="font-size:18px;">edit</span>
+                        <button class="cat-color-btn" data-category="TORTAS">
+                            <img class="cat-color" src="icono-tortas.png" alt="TORTAS">
                         </button>
->>>>>>> 194aaa9d813ec628a6d3a0b9c2b0bf0bf6b8592d:catalogo/catalogo.html
+                        <span class="cat-label">TORTAS (<span class="cat-count" data-category="TORTAS">4</span>)</span>
+                        <span class="cat-actions"></span>
+                        <i class="fa fa-pen"></i>
                         <i class="fa fa-trash"></i>
+                        </span>
                     </li>
                 </ul>
                 <div class="add-category">
@@ -121,10 +102,22 @@
                     <img src="pan3.jpg" alt="Mini artesanal Tanta Zara">
                     <div class="product-title">Mini artesanal Tanta Zara</div>
                 </div>
+                <div class="product-card" data-category="POSTRES" style="display:none">
+                    <img src="postre1.jpg" alt="Postre 1">
+                    <div class="product-title">Postre 1</div>
+                </div>
+                <div class="product-card" data-category="CUCHAREABLES" style="display:none">
+                    <img src="cuchareable1.jpg" alt="Cuchareable 1">
+                    <div class="product-title">Cuchareable 1</div>
+                </div>
+                <div class="product-card" data-category="TORTAS" style="display:none">
+                    <img src="torta1.jpg" alt="Torta 1">
+                    <div class="product-title">Torta 1</div>
+                </div>
             </div>
         </div>
         <footer>
-            <span>© 2025 · D'JULIA</span>
+            <span>© 2025 · DJULIA</span>
             <div class="footer-links">
                 <a href="#">About</a>
                 <a href="#">Careers</a>
@@ -133,36 +126,7 @@
             </div>
         </footer>
     </div>
-<<<<<<< HEAD:Loggin/catalogo/catalogo.html
     <script src="catalogo.js"></script>
 </body>
 
 </html>
-=======
-
-    <!-- Modal Editar Categoría -->
-    <div id="editCategoryModal" class="edit-category-modal">
-        <div class="edit-category-content">
-            <div class="edit-category-header">
-                <span>EDITAR CATEGORÍA</span>
-            </div>
-            <form id="editCategoryForm">
-                <label for="categoryName">NOMBRE</label>
-                <input type="text" id="categoryName" name="categoryName" required>
-                <label>IMAGEN</label>
-                <div class="image-picker">
-                    <button type="button" id="chooseImageBtn">
-                        ELEGIR IMAGEN <span class="material-icons" style="font-size:16px;vertical-align:middle;">expand_more</span>
-                    </button>
-                    <input type="file" id="categoryImageInput" accept="image/*" style="display:none;">
-                </div>
-                <div class="edit-category-actions">
-                    <button type="submit" class="btn-save">GUARDAR</button>
-                    <button type="button" class="btn-cancel" id="cancelEditCategory">CANCELAR</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <script src=
->>>>>>> 194aaa9d813ec628a6d3a0b9c2b0bf0bf6b8592d:catalogo/catalogo.html
