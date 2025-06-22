@@ -15,7 +15,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
 
     if (user === validUser && password === validPassword) {
         alert("¡Login exitoso!");
-        window.location.href = 'catalogo/catalogo.html';
+        window.location.href = '../Catalogo/catalogo.html'; 
     } else {
         alert("Usuario o contraseña incorrectos.");
     }
