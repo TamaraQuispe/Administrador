@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Nuevo Producto - DJULIA</title>
+    <link rel="stylesheet" href="agregar-producto.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="../Loggin/logo.png" alt="DJULIA">
+        </div>
+        <nav>
+            <ul>
+                <li><span class="material-icons">menu_book</span> CATALOGO</li>
+                <li class="active"><span class="material-icons">list_alt</span> TODOS LOS PRODUCTOS</li>
+                <li><span class="material-icons">image</span> BANNER</li>
+                <li><span class="material-icons">campaign</span> ANUNCIO</li>
+            </ul>
+        </nav>
+        <div class="categories">
+            <h4>Categories</h4>
+            <ul>
+                <li>PANES <span class="badge">21</span></li>
+                <li>CUCHARABLES <span class="badge">32</span></li>
+                <li>TORTAS <span class="badge">13</span></li>
+                <li>POSTRES <span class="badge">14</span></li>
+            </ul>
+        </div>
+    </aside>
+    <main>
+        <header class="main-header">
+            <div>
+                <h2>Agregar Nuevo Producto</h2>
+                <span class="breadcrumb">Inicio &gt; Todos los productos &gt; Agregar Nuevo Producto</span>
+            </div>
+        </header>
+        <section class="product-add-container">
+            <form class="product-add-form">
+                <div class="form-main">
+                    <label>
+                        <span>Información del Producto <span class="required">*</span></span>
+                        <input type="text" placeholder="Nombre" required>
+                    </label>
+                    <label>
+                        <span>Descripción</span>
+                        <textarea rows="3" placeholder="p.ej., Una breve descripción del producto aquí."></textarea>
+                    </label>
+                    <label>
+                        <span>Categorías <span class="add-category">+Añadir</span></span>
+                        <input type="text" placeholder="SELECCIONAR">
+                    </label>
+                    <label>
+                        <span>Precio Regular</span>
+                        <input type="text" placeholder="Precio">
+                    </label>
+                </div>
+                <div class="form-side">
+                    <div class="gallery-upload">
+                        <span class="material-icons gallery-icon">image</span>
+                        <div class="gallery-text">
+                            <p>Deja tu imagen aquí o navega</p>
+                            <small>Se permiten jpeg y png</small>
+                        </div>
+                        <input type="file" accept="image/jpeg,image/png">
+                    </div>
+                </div>
+            </form>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-black">SUBIR</button>
+                <button type="button" class="btn btn-cancel">CANCELAR</button>
+            </div>
+        </section>
+        <footer class="main-footer">
+            <span>© 2025 - DJULIA</span>
+            <nav>
+                <a href="#">About</a>
+                <a href="#">Careers</a>
+                <a href="#">Policy</a>
+                <a href="#">Contact</a>
+            </nav>
+        </footer>
+    </main>
+    <script src="agregar-producto.js"></script>
+</body>
+</html>

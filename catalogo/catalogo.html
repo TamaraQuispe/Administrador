@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="catalogo.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Segoe+UI:400,700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
     <div class="sidebar">
@@ -45,25 +46,33 @@
                     <li>
                         <span class="cat-color" style="background:#bdbdbd"></span>
                         PANES (3)
-                        <i class="fa fa-pen"></i>
+                        <button class="edit-category-btn" title="Editar categoría">
+                            <span class="material-icons" style="font-size:18px;">edit</span>
+                        </button>
                         <i class="fa fa-trash"></i>
                     </li>
                     <li>
                         <span class="cat-color" style="background:#bdbdbd"></span>
                         POSTRES (4)
-                        <i class="fa fa-pen"></i>
+                        <button class="edit-category-btn" title="Editar categoría">
+                            <span class="material-icons" style="font-size:18px;">edit</span>
+                        </button>
                         <i class="fa fa-trash"></i>
                     </li>
                     <li>
                         <span class="cat-color" style="background:#bdbdbd"></span>
                         CUCHAREABLES (5)
-                        <i class="fa fa-pen"></i>
+                        <button class="edit-category-btn" title="Editar categoría">
+                            <span class="material-icons" style="font-size:18px;">edit</span>
+                        </button>
                         <i class="fa fa-trash"></i>
                     </li>
                     <li>
                         <span class="cat-color" style="background:#bdbdbd"></span>
                         TORTAS (4)
-                        <i class="fa fa-pen"></i>
+                        <button class="edit-category-btn" title="Editar categoría">
+                            <span class="material-icons" style="font-size:18px;">edit</span>
+                        </button>
                         <i class="fa fa-trash"></i>
                     </li>
                 </ul>
@@ -97,6 +106,29 @@
             </div>
         </footer>
     </div>
-    <script src="catalogo.js"></script>
-</body>
-</html>
+
+    <!-- Modal Editar Categoría -->
+    <div id="editCategoryModal" class="edit-category-modal">
+        <div class="edit-category-content">
+            <div class="edit-category-header">
+                <span>EDITAR CATEGORÍA</span>
+            </div>
+            <form id="editCategoryForm">
+                <label for="categoryName">NOMBRE</label>
+                <input type="text" id="categoryName" name="categoryName" required>
+                <label>IMAGEN</label>
+                <div class="image-picker">
+                    <button type="button" id="chooseImageBtn">
+                        ELEGIR IMAGEN <span class="material-icons" style="font-size:16px;vertical-align:middle;">expand_more</span>
+                    </button>
+                    <input type="file" id="categoryImageInput" accept="image/*" style="display:none;">
+                </div>
+                <div class="edit-category-actions">
+                    <button type="submit" class="btn-save">GUARDAR</button>
+                    <button type="button" class="btn-cancel" id="cancelEditCategory">CANCELAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src=
