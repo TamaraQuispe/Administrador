@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles del producto - DJULIA</title>
+    <link rel="stylesheet" href="detalles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="../Loggin/logo.png" alt="DJULIA">
+        </div>
+        <nav>
+            <ul>
+                <li><span class="material-icons">menu_book</span> CATALOGO</li>
+                <li class="active"><span class="material-icons">list_alt</span> TODOS LOS PRODUCTOS</li>
+                <li><span class="material-icons">image</span> BANNER</li>
+                <li><span class="material-icons">campaign</span> ANUNCIO</li>
+            </ul>
+        </nav>
+        <div class="categories">
+            <h4>Categories</h4>
+            <ul>
+                <li>PANES <span class="badge">21</span></li>
+                <li>CUCHARABLES <span class="badge">32</span></li>
+                <li>TORTAS <span class="badge">13</span></li>
+                <li>POSTRES <span class="badge">14</span></li>
+            </ul>
+        </div>
+    </aside>
+    <main>
+        <header class="main-header">
+            <div>
+                <h2>Detalles del producto</h2>
+                <span class="breadcrumb">Inicio &gt; Todos los productos &gt; Detalles del producto</span>
+            </div>
+        </header>
+        <section class="product-detail-container">
+            <form class="product-detail-form">
+                <div class="form-main">
+                    <label>
+                        <span>Información del Producto</span>
+                        <input type="text" value="Soufflé de fresas DC">
+                    </label>
+                    <label>
+                        <span>Descripción</span>
+                        <textarea rows="3">Bizcochuelo de vainilla relleno con fresas, manjar y chantilly. Decorado con butterscotch fresas y chantilly. Mantener refrigerado.
+
+Porciones: 15 a 20 aprox.</textarea>
+                    </label>
+                    <label>
+                        <span>Categorías <span class="add-category">+Añadir</span></span>
+                        <input type="text" value="TORTAS">
+                    </label>
+                    <div class="form-row">
+                        <label>
+                            <span>SKU</span>
+                            <input type="text" value="#32A53">
+                        </label>
+                        <label>
+                            <span>Stock</span>
+                            <input type="number" value="20">
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <label>
+                            <span>Precio Regular</span>
+                            <input type="text" value="S/80.00">
+                        </label>
+                        <label>
+                            <span>Precio Descuento</span>
+                            <input type="text" value="S/70.00">
+                        </label>
+                    </div>
+                </div>
+                <div class="form-side">
+                    <div class="main-image">
+                        <img src="https://placehold.co/260x200?text=Souffle+de+fresas+DC" alt="Producto">
+                    </div>
+                    <div class="gallery-upload">
+                        <span class="material-icons gallery-icon">image</span>
+                        <div class="gallery-text">
+                            <p>Deja tu imagen aquí o navega</p>
+                            <small>Se permiten jpeg y png</small>
+                        </div>
+                        <input type="file" accept="image/jpeg,image/png">
+                    </div>
+                </div>
+            </form>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-black">SUBIR</button>
+                <button type="button" class="btn btn-danger">ELIMINAR</button>
+                <button type="button" class="btn btn-cancel">CANCELAR</button>
+            </div>
+        </section>
+        <footer class="main-footer">
+            <span>© 2025 - DJULIA</span>
+            <nav>
+                <a href="#">About</a>
+                <a href="#">Careers</a>
+                <a href="#">Policy</a>
+                <a href="#">Contact</a>
+            </nav>
+        </footer>
+    </main>
+    <script src="detalles.js"></script>
+</body>
+</html>

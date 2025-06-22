@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>D'JULIA Panel - Productos</title>
+    <link rel="stylesheet" href="productos.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="../Loggin/logo.png" alt="DJULIA">
+        </div>
+        <nav>
+            <ul>
+                <li><span class="material-icons">menu_book</span> CATALOGO</li>
+                <li class="active"><span class="material-icons">list_alt</span> TODOS LOS PRODUCTOS</li>
+                <li><span class="material-icons">image</span> BANNER</li>
+                <li><span class="material-icons">campaign</span> ANUNCIO</li>
+            </ul>
+        </nav>
+        <div class="categories">
+            <h4>Categories</h4>
+            <ul>
+                <li>PANES <span class="badge">21</span></li>
+                <li>CUCHARABLES <span class="badge">32</span></li>
+                <li>TORTAS <span class="badge">13</span></li>
+                <li>POSTRES <span class="badge">14</span></li>
+            </ul>
+        </div>
+    </aside>
+    <main>
+        <header class="main-header">
+            <div>
+                <h2>Todos los productos</h2>
+                <span class="breadcrumb">Home &gt; Todos los productos</span>
+            </div>
+            <div class="header-actions">
+                <button class="add-product-btn">
+                    <span class="material-icons">add</span> AGREGAR PRODUCTO
+                </button>
+                <span class="material-icons">search</span>
+                <div class="user-dropdown">
+                    <button class="user-btn">ADMIN <span class="material-icons">expand_more</span></button>
+                </div>
+            </div>
+        </header>
+        <section class="products-grid" id="productsGrid">
+            <!-- Los productos se renderizan aquí por JS -->
+        </section>
+        <footer class="pagination-footer">
+            <div class="pagination" id="pagination">
+                <!-- La paginación se renderiza aquí por JS -->
+            </div>
+        </footer>
+        <footer class="main-footer">
+            <span>© 2023 - DJULIA</span>
+            <nav>
+                <a href="#">About</a>
+                <a href="#">Careers</a>
+                <a href="#">Policy</a>
+                <a href="#">Contact</a>
+            </nav>
+        </footer>
+    </main>
+    <script src="productos.js"></script>
+</body>
+</html>
