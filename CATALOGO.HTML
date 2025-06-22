@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <title>Catálogo | D'JULIA</title>
     <link rel="stylesheet" href="catalogo.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Segoe+UI:400,700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-
 <body>
     <div class="sidebar">
         <div class="logo-section">
@@ -30,45 +27,49 @@
     </div>
     <div class="main-content">
         <header>
-            <div class="breadcrumb">
-                <span>Catálogo</span>
-                <span class="divider">&gt;</span>
-                <span class="current">Home &gt; Catálogo</span>
-            </div>
             <div class="header-actions">
                 <i class="fa fa-search"></i>
                 <button class="admin-btn">ADMIN <i class="fa fa-caret-down"></i></button>
             </div>
         </header>
         <div class="content">
+            <div class="breadcrumb">
+                <span>Catálogo</span>
+                <span class="divider">&gt;</span>
+                <span class="current">Home &gt; Catálogo</span>
+            </div>
             <div class="categories-panel">
                 <div class="categories-header">Categorías</div>
                 <ul class="categories-list">
                     <li>
-                        <button class="cat-color-btn" data-category="PANES"
-                            style="background:none;border:none;cursor:pointer;padding:0;">
-                            <img class="cat-color" src="icono-panes.png" alt="PANES"
-                                style="width:32px;height:32px;border-radius:5%;display:block;">
+                        <button class="cat-color-btn" data-category="PANES">
+                            <img class="cat-color" src="icono-panes.png" alt="PANES">
                         </button>
-                        PANES (<span class="cat-count" data-category="PANES">0</span>)
+                        PANES (<span class="cat-count" data-category="PANES">3</span>)
                         <i class="fa fa-pen"></i>
                         <i class="fa fa-trash"></i>
                     </li>
                     <li>
-                        <span class="cat-color" style="background:#bdbdbd"></span>
-                        POSTRES (<span class="cat-count" data-category="POSTRES">0</span>)
+                        <button class="cat-color-btn" data-category="POSTRES">
+                            <img class="cat-color" src="icono-postres.png" alt="POSTRES">
+                        </button>
+                        POSTRES (<span class="cat-count" data-category="POSTRES">4</span>)
                         <i class="fa fa-pen"></i>
                         <i class="fa fa-trash"></i>
                     </li>
                     <li>
-                        <span class="cat-color" style="background:#bdbdbd"></span>
-                        CUCHAREABLES (<span class="cat-count" data-category="CUCHAREABLES">0</span>)
+                        <button class="cat-color-btn" data-category="CUCHAREABLES">
+                            <img class="cat-color" src="icono-cuchareables.png" alt="CUCHAREABLES">
+                        </button>
+                        CUCHAREABLES (<span class="cat-count" data-category="CUCHAREABLES">5</span>)
                         <i class="fa fa-pen"></i>
                         <i class="fa fa-trash"></i>
                     </li>
                     <li>
-                        <span class="cat-color" style="background:#bdbdbd"></span>
-                        TORTAS (<span class="cat-count" data-category="TORTAS">0</span>)
+                        <button class="cat-color-btn" data-category="TORTAS">
+                            <img class="cat-color" src="icono-tortas.png" alt="TORTAS">
+                        </button>
+                        TORTAS (<span class="cat-count" data-category="TORTAS">4</span>)
                         <i class="fa fa-pen"></i>
                         <i class="fa fa-trash"></i>
                     </li>
@@ -94,7 +95,7 @@
             </div>
         </div>
         <footer>
-            <span>© 2025 · D'JULIA</span>
+            <span>© 2025 · DJULIA</span>
             <div class="footer-links">
                 <a href="#">About</a>
                 <a href="#">Careers</a>
@@ -105,5 +106,4 @@
     </div>
     <script src="catalogo.js"></script>
 </body>
-
 </html>
