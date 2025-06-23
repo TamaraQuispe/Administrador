@@ -60,8 +60,6 @@ function setupPagination() {
     });
 }
 
-// ...existing code...
-
 function setupProductMenus() {
     function closeAllMenus() {
         document.querySelectorAll('.product-menu.active').forEach(menu => {
@@ -91,38 +89,79 @@ function setupProductMenus() {
     });
 }
 
-// ...existing code...
-
 // Redirección al hacer clic en "CATALOGO"
 document.addEventListener('DOMContentLoaded', () => {
     const catalogoBtn = document.querySelectorAll('.sidebar nav ul li')[0];
     if (catalogoBtn) {
-        catalogoBtn.addEventListener('click', function() {
+        catalogoBtn.addEventListener('click', function () {
             window.location.href = '../catalogo/catalogo.html';
         });
     }
 });
-document.addEventListener('DOMContentLoaded', () => {
-    // ...otros códigos...
 
+// Redirección al hacer clic en "Agregar producto"
+document.addEventListener('DOMContentLoaded', () => {
     const addProductBtn = document.querySelector('.add-product-btn');
     if (addProductBtn) {
-        addProductBtn.addEventListener('click', function() {
+        addProductBtn.addEventListener('click', function () {
             window.location.href = '../DetallesProductos/agregar-producto.html';
         });
     }
 });
+
+// Redirección a Banner
 document.addEventListener('DOMContentLoaded', () => {
-    // Redirección a Banner
     const bannerBtn = document.querySelectorAll('.sidebar nav ul li')[2];
     if (bannerBtn) {
-        bannerBtn.addEventListener('click', function() {
+        bannerBtn.addEventListener('click', function () {
             window.location.href = '../Banner/banner.html';
         });
     }
 });
 
-// Inicialización
+// Redirección a Anuncios
+document.addEventListener('DOMContentLoaded', () => {
+    const anuncioBtn = document.querySelectorAll('.sidebar nav ul li')[3];
+    if (anuncioBtn) {
+        anuncioBtn.addEventListener('click', function () {
+            window.location.href = '../Anuncios/anuncio.html';
+        });
+    }
+});
+
+// Menú Admin Header
+document.addEventListener('DOMContentLoaded', () => {
+    const adminBtn = document.getElementById('adminMenuBtn');
+    const adminDropdown = document.getElementById('adminDropdown');
+    if (adminBtn && adminDropdown) {
+        adminBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            adminDropdown.classList.toggle('active');
+        });
+        document.addEventListener('click', () => {
+            adminDropdown.classList.remove('active');
+        });
+        adminDropdown.addEventListener('click', (e) => e.stopPropagation());
+    }
+
+    // Funcionalidad para Cambiar Contraseña y Cerrar Sesión
+    const cambiarBtn = document.querySelector('.admin-dropdown-item.cambiar');
+    const cerrarBtn = document.querySelector('.admin-dropdown-item.cerrar');
+    if (cambiarBtn) {
+        cambiarBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = '../Cambiar-Contraseña/cambiar-contraseña.html';
+        });
+    }
+    if (cerrarBtn) {
+        cerrarBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = '../Loggin/loggin.html';
+        });
+    }
+});
+
+// Inicializar productos y paginación
 renderProducts(1);
 renderPagination(1);
-setupPagination();
+// Configurar paginación

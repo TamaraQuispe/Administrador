@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cambiar Contraseña - DJULIA</title>
+    <link rel="stylesheet" href="cambiar-contraseña.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap">
+</head>
+
+<body>
+    <div class="change-container">
+        <form class="change-form" id="changePasswordForm">
+            <h2>Cambiar Contraseña</h2>
+
+            <label>
+                Nueva Contraseña
+                <input type="password" id="nueva" required>
+            </label>
+            <label>
+                Confirmar Nueva Contraseña
+                <input type="password" id="confirmar" required>
+            </label>
+            <button type="submit" class="btn-change">Guardar</button>
+            <button type="button" class="btn-cancel" id="cancelBtn">Cancelar</button>
+        </form>
+    </div>
+    <script src="cambiar-contraseña.js"></script>
+</body>
+
+</html>

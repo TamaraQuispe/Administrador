@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Agregar Nuevo Producto - DJULIA</title>
-    <link rel="stylesheet" href="agregar-producto.css">
+    <title>Anuncio - DJULIA</title>
+    <link rel="stylesheet" href="anuncio.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
@@ -17,9 +17,9 @@
         <nav>
             <ul>
                 <li><span class="material-icons">menu_book</span> CATALOGO</li>
-                <li class="active"><span class="material-icons">list_alt</span> TODOS LOS PRODUCTOS</li>
+                <li><span class="material-icons">list_alt</span> TODOS LOS PRODUCTOS</li>
                 <li><span class="material-icons">image</span> BANNER</li>
-                <li><span class="material-icons">campaign</span> ANUNCIO</li>
+                <li class="active"><span class="material-icons">campaign</span> ANUNCIO</li>
             </ul>
         </nav>
         <div class="categories">
@@ -35,8 +35,8 @@
     <main>
         <header class="main-header">
             <div>
-                <h2>Agregar Nuevo Producto</h2>
-                <span class="breadcrumb">Inicio &gt; Todos los productos &gt; Agregar Nuevo Producto</span>
+                <h2>Anuncio</h2>
+                <span class="breadcrumb">Home &gt; Anuncio</span>
             </div>
             <div class="header-actions">
                 <span class="material-icons search-icon">search</span>
@@ -54,41 +54,55 @@
                         </span></button>
                     </div>
                 </div>
+            </div>
         </header>
-        <section class="product-add-container">
-            <form class="product-add-form">
-                <div class="form-main">
+        <section class="anuncio-container">
+            <form class="anuncio-form">
+                <div class="anuncio-form-left">
+                    <label class="file-upload-label">
+                        <div class="file-upload-box" id="fileUploadBox">
+                            <span class="material-icons upload-icon">image</span>
+                            <div class="upload-text">
+                                <p>Tipos de archivo que puedas subir: PDF, PPT, Word, Excel, JPG, mp3, mp4, zip o rar
+                                </p>
+                            </div>
+                            <input type="file" id="anuncioFileInput" multiple>
+                        </div>
+                    </label>
+                </div>
+                <div class="anuncio-form-right">
                     <label>
-                        <span>Información del Producto <span class="required">*</span></span>
-                        <input type="text" placeholder="Nombre" required>
+                        <span>Título</span>
+                        <input type="text" placeholder="Escriba el título aquí" required>
                     </label>
                     <label>
                         <span>Descripción</span>
-                        <textarea rows="3" placeholder="p.ej., Una breve descripción del producto aquí."></textarea>
+                        <textarea rows="4" placeholder="Escriba descripción aquí"></textarea>
                     </label>
                     <label>
-                        <span>Categorías <span class="add-category">+Añadir</span></span>
-                        <input type="text" placeholder="SELECCIONAR">
+                        <span>Fecha publicación</span>
+                        <input type="text" placeholder="DD/MM/AAAA">
                     </label>
                     <label>
-                        <span>Precio Regular</span>
-                        <input type="text" placeholder="Precio">
+                        <span>Estado</span>
+                        <select>
+                            <option>Publicado</option>
+                            <option>Borrador</option>
+                            <option>Archivado</option>
+                        </select>
                     </label>
-                </div>
-                <div class="form-side">
-                    <div class="gallery-upload">
-                        <span class="material-icons gallery-icon">image</span>
-                        <div class="gallery-text">
-                            <p>Deja tu imagen aquí o navega</p>
-                            <small>Se permiten jpeg y png</small>
-                        </div>
-                        <input type="file" accept="image/jpeg,image/png">
-                    </div>
+                    <label>
+                        <span>Visibilidad</span>
+                        <select>
+                            <option>Público</option>
+                            <option>Privado</option>
+                        </select>
+                    </label>
                 </div>
             </form>
-            <div class="form-actions">
-                <button type="submit" class="btn btn-black">SUBIR</button>
-                <button type="button" class="btn btn-cancel">CANCELAR</button>
+            <div class="anuncio-actions">
+                <button type="submit" class="btn btn-purple">Guardar</button>
+                <button type="button" class="btn btn-cancel">Cancelar</button>
             </div>
         </section>
         <footer class="main-footer">
@@ -101,7 +115,7 @@
             </nav>
         </footer>
     </main>
-    <script src="agregar-producto.js"></script>
+    <script src="anuncio.js"></script>
 </body>
 
 </html>
