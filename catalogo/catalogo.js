@@ -10,9 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
         span.textContent = counts[cat] || 0;
     });
 
+    //mostrar y ocutar sidebar
+    document.addEventListener('DOMContentLoaded', function () {
+        const sidebar = document.querySelector('.sidebar');
+        const logo = document.getElementById('sidebarToggle');
+
+        if (logo && sidebar) {
+            logo.addEventListener('click', function () {
+                sidebar.classList.toggle('active');
+            });
+        }
+    });
+
     // Filtrado de productos al hacer clic en la imagen de la categoría
     document.querySelectorAll('.cat-color-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
+        btn.addEventListener('click', function (e) {
             const cat = this.getAttribute('data-category');
             document.querySelectorAll('.product-card').forEach(card => {
                 card.style.display = (card.getAttribute('data-category') === cat) ? '' : 'none';
@@ -53,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Redirección al hacer clic en "TODOS LOS PRODUCTOS"
     const productosBtn = document.querySelectorAll('.sidebar nav ul li')[1];
     if (productosBtn) {
-        productosBtn.addEventListener('click', function() {
+        productosBtn.addEventListener('click', function () {
             window.location.href = '../productos/productos.html';
         });
     }
@@ -61,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Redirección a Banner
     const bannerBtn = document.querySelectorAll('.sidebar nav ul li')[2];
     if (bannerBtn) {
-        bannerBtn.addEventListener('click', function() {
+        bannerBtn.addEventListener('click', function () {
             window.location.href = '../Banner/banner.html';
         });
     }
@@ -69,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Redirección a Catalogo
     const catalogoBtn = document.querySelectorAll('.sidebar nav ul li')[0];
     if (catalogoBtn) {
-        catalogoBtn.addEventListener('click', function() {
+        catalogoBtn.addEventListener('click', function () {
             window.location.href = '../catalogo/catalogo.html';
         });
     }
@@ -77,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Redirección a Anuncios
     const anuncioBtn = document.querySelectorAll('.sidebar nav ul li')[3];
     if (anuncioBtn) {
-        anuncioBtn.addEventListener('click', function() {
+        anuncioBtn.addEventListener('click', function () {
             window.location.href = '../Anuncios/anuncio.html';
         });
     }
@@ -147,6 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('click', () => {
             notifPanel.style.display = 'none';
         });
-         notifPanel.addEventListener('click', e => e.stopPropagation());
+        notifPanel.addEventListener('click', e => e.stopPropagation());
     }
 });

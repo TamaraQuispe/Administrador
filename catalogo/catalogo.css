@@ -425,28 +425,105 @@ footer {
     color: #a90064;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
     .products-panel {
-        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+    }
+    .product-card {
+        width: 48%;
+        min-width: 220px;
     }
 }
 
-@media (max-width: 800px) {
-    .sidebar {
-        display: none;
-    }
-
-    .main-content {
-        margin-left: 0;
-    }
-
-    .content {
+@media (max-width: 900px) {
+    .main-content, .content {
         flex-direction: column;
-        gap: 20px;
-        padding: 20px;
+        gap: 0;
+        padding: 0;
     }
-
+    .categories-panel {
+        
+        width: 90%;
+        min-width: 0;
+        margin-bottom: 18px;
+        padding: 18px 8px 12px 8px;
+        gap: 10px;
+        box-sizing: border-box;
+        margin-left: auto;    
+        margin-right: auto;   
+        align-items: center;
+    }
+    .categories-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: flex-start;
+    }
+    .categories-list li {
+        min-width: 120px;
+        flex: 1 1 40%;
+        max-width: 48%;
+    }
     .products-panel {
-        grid-template-columns: 1fr;
+        flex-wrap: wrap;
+        gap: 14px;
+        justify-content: center;
+    }
+    .product-card {
+        width: 90%;
+        min-width: 180px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .categories-panel {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .categories-list {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .categories-list li {
+        min-width: 0;
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+    .products-panel {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 4px;
+    }
+    .product-card {
+        width: 100%;
+        min-width: 0;
+    }
+    .main-header, .main-footer, .categories-panel {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+/* Responsive del sidebar */
+@media (max-width: 900px) {
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 220px;
+        background: #fff;
+        box-shadow: 2px 0 8px #0002;
+        z-index: 999;
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+        display: block;
+    }
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    .main-content {
+        margin-left: 0 !important;
     }
 }
