@@ -19,14 +19,15 @@ body {
 }
 
 .logo-section {
-    padding: 32px 0 8px 32px;
+    padding: 32px 0 8px 0;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+
 }
 
 .logo {
-    width: 90px;
+    width: 120px;
     margin-bottom: 4px;
 }
 
