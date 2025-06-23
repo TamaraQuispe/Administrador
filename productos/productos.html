@@ -43,11 +43,8 @@
                 <button class="add-product-btn">
                     <span class="material-icons">add</span> AGREGAR PRODUCTO
                 </button>
-
-            </div>
-            <div class="header-actions">
-                <span class="material-icons search-icon">search</span>
-                <span class="material-icons bell-icon">notifications</span>
+                <span class="material-icons search-icon" id="searchIcon">search</span>
+                <span class="material-icons bell-icon" id="notifIcon">notifications</span>
                 <div class="admin-menu-container">
                     <button class="admin-btn" id="adminMenuBtn">
                         ADMIN <span class="material-icons"
@@ -58,8 +55,15 @@
                         <button class="admin-dropdown-item cambiar" type="button">CAMBIAR CONTRASEÑA</button>
                         <button class="admin-dropdown-item cerrar" type="button">CERRAR SESIÓN <span
                                 class="material-icons">logout</span></button>
-                        </span></button>
                     </div>
+                </div>
+                <!-- Caja de búsqueda -->
+                <div class="search-box" id="searchBox" style="display:none;">
+                    <input type="text" id="searchInput" placeholder="Buscar producto...">
+                </div>
+                <!-- Panel de notificaciones -->
+                <div class="notif-panel" id="notifPanel" style="display:none;">
+                    <p>No tienes notificaciones nuevas.</p>
                 </div>
             </div>
         </header>
@@ -83,5 +87,3 @@
     </main>
     <script src="productos.js"></script>
 </body>
-
-</html>

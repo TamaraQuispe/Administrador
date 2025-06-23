@@ -7,14 +7,18 @@ const products = Array.from({ length: 63 }, (_, i) => ({
 }));
 
 const PRODUCTS_PER_PAGE = 21;
-const TOTAL_PAGES = Math.ceil(products.length / PRODUCTS_PER_PAGE);
+let TOTAL_PAGES = Math.ceil(products.length / PRODUCTS_PER_PAGE);
 
-function renderProducts(page = 1) {
+// Variables para búsqueda
+let filteredProducts = null;
+
+function renderProducts(page = 1, list = null) {
     const grid = document.getElementById('productsGrid');
     grid.innerHTML = '';
+    const data = list || filteredProducts || products;
     const start = (page - 1) * PRODUCTS_PER_PAGE;
     const end = start + PRODUCTS_PER_PAGE;
-    const pageProducts = products.slice(start, end);
+    const pageProducts = data.slice(start, end);
 
     pageProducts.forEach((prod, idx) => {
         grid.innerHTML += `
@@ -42,10 +46,12 @@ function renderProducts(page = 1) {
     setupProductMenus();
 }
 
-function renderPagination(currentPage = 1) {
+function renderPagination(currentPage = 1, list = null) {
     const pag = document.getElementById('pagination');
     pag.innerHTML = '';
-    for (let i = 1; i <= TOTAL_PAGES; i++) {
+    const data = list || filteredProducts || products;
+    const totalPages = Math.ceil(data.length / PRODUCTS_PER_PAGE);
+    for (let i = 1; i <= totalPages; i++) {
         pag.innerHTML += `<button class="page${i === currentPage ? ' active' : ''}" data-page="${i}">${i}</button>`;
     }
 }
@@ -161,7 +167,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Funcionalidad de búsqueda y notificaciones
+document.addEventListener('DOMContentLoaded', () => {
+    // Búsqueda
+    const searchIcon = document.getElementById('searchIcon');
+    const searchBox = document.getElementById('searchBox');
+    const searchInput = document.getElementById('searchInput');
+    if (searchIcon && searchBox && searchInput) {
+        searchIcon.addEventListener('click', () => {
+            if (searchBox.style.display === 'none' || searchBox.style.display === '') {
+                searchBox.style.display = 'block';
+                searchInput.focus();
+            } else {
+                searchBox.style.display = 'none';
+            }
+        });
+
+        searchInput.addEventListener('input', () => {
+            const value = searchInput.value.trim().toLowerCase();
+            if (value === '') {
+                filteredProducts = null;
+            } else {
+                filteredProducts = products.filter(p => p.name.toLowerCase().includes(value));
+            }
+            renderProducts(1, filteredProducts);
+            renderPagination(1, filteredProducts);
+        });
+    }
+
+    // Notificaciones
+    const notifIcon = document.getElementById('notifIcon');
+    const notifPanel = document.getElementById('notifPanel');
+    if (notifIcon && notifPanel) {
+        notifIcon.addEventListener('click', (e) => {
+            e.stopPropagation();
+            notifPanel.style.display = notifPanel.style.display === 'none' || notifPanel.style.display === '' ? 'block' : 'none';
+        });
+        document.addEventListener('click', () => {
+            notifPanel.style.display = 'none';
+        });
+        notifPanel.addEventListener('click', e => e.stopPropagation());
+    }
+});
+
 // Inicializar productos y paginación
-renderProducts(1);
-renderPagination(1);
-// Configurar paginación
+document.addEventListener('DOMContentLoaded', () => {
+    renderProducts(1);
+    renderPagination(1);
+    setupPagination();
+});

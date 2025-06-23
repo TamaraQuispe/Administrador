@@ -36,8 +36,8 @@
                 <span class="current">Home &gt; Catálogo</span>
             </div>
             <div class="header-actions">
-                <span class="material-icons search-icon">search</span>
-                <span class="material-icons bell-icon">notifications</span>
+                <span class="material-icons search-icon" id="searchIcon">search</span>
+                <span class="material-icons bell-icon" id="notifIcon">notifications</span>
                 <div class="admin-menu-container">
                     <button class="admin-btn" id="adminMenuBtn">
                         ADMIN <span class="material-icons"
@@ -48,8 +48,15 @@
                         <button class="admin-dropdown-item cambiar" type="button">CAMBIAR CONTRASEÑA</button>
                         <button class="admin-dropdown-item cerrar" type="button">CERRAR SESIÓN <span
                                 class="material-icons">logout</span></button>
-                        </span></button>
                     </div>
+                </div>
+                <!-- Caja de búsqueda -->
+                <div class="search-box" id="searchBox" style="display:none;">
+                    <input type="text" id="searchInput" placeholder="Buscar producto...">
+                </div>
+                <!-- Panel de notificaciones -->
+                <div class="notif-panel" id="notifPanel" style="display:none;">
+                    <p>No tienes notificaciones nuevas.</p>
                 </div>
             </div>
         </header>
@@ -105,7 +112,7 @@
                     <button class="new-cat-btn">Nueva Categoría</button>
                 </div>
             </div>
-            <div class="products-panel">
+            <div class="products-panel" id="productsPanel">
                 <div class="product-card" data-category="PANES">
                     <img src="../imagenes/Panes.webp" alt="Hogaza de Tanta Zara">
                     <div class="product-title">Hogaza de Tanta Zara</div>
@@ -118,7 +125,6 @@
                     <img src="../imagenes/MiniZara.webp" alt="Mini artesanal Tanta Zara">
                     <div class="product-title">Mini artesanal Tanta Zara</div>
                 </div>
-
                 <div class="product-card" data-category="POSTRES">
                     <img src="../imagenes/Postres.webp" alt="Profiterol de Pistacho">
                     <div class="product-title">Profiterol de Pistacho</div>
@@ -143,7 +149,6 @@
                     <img src="../imagenes/Mini pasion de mil hojas.webp" alt="Mini Pasión de milhojas">
                     <div class="product-title">Mini Pasión de milhojas</div>
                 </div>
-
                 <div class="product-card" data-category="CUCHAREABLES">
                     <img src="../imagenes/Cuchareable.webp" alt="Cuchareable de tiramisú">
                     <div class="product-title">Cuchareable de tiramisú</div>
@@ -160,7 +165,6 @@
                     <img src="../imagenes/Huevo carrot cake.webp" alt="Huevo Carrot Cake">
                     <div class="product-title">Huevo Carrot Cake</div>
                 </div>
-
                 <div class="product-card" data-category="TORTAS">
                     <img src="../imagenes/Tortas.webp" alt="Delicia de fresa (chico)">
                     <div class="product-title">Delicia de fresa (chico)</div>
@@ -195,5 +199,3 @@
     </div>
     <script src="catalogo.js"></script>
 </body>
-
-</html>

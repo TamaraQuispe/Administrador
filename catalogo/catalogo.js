@@ -20,7 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mantén los eventos de editar/eliminar igual
+    // Mostrar todos los productos al hacer clic en "Categories"
+    const categoriesTitle = document.querySelector('.categories-title');
+    if (categoriesTitle) {
+        categoriesTitle.addEventListener('click', () => {
+            document.querySelectorAll('.product-card').forEach(card => {
+                card.style.display = '';
+            });
+        });
+    }
+
+    // Editar y eliminar categorías (demo)
     document.querySelectorAll('.categories-list .fa-pen').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -33,9 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Eliminar categoría (demo)');
         });
     });
-    document.querySelector('.add-btn').addEventListener('click', () => {
-        alert('Añadir nueva categoría (demo)');
-    });
+    const addBtn = document.querySelector('.add-btn');
+    if (addBtn) {
+        addBtn.addEventListener('click', () => {
+            alert('Añadir nueva categoría (demo)');
+        });
+    }
 
     // Redirección al hacer clic en "TODOS LOS PRODUCTOS"
     const productosBtn = document.querySelectorAll('.sidebar nav ul li')[1];
@@ -99,51 +112,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Mostrar modal al hacer clic en el lápiz
-    document.querySelectorAll('.edit-category-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            document.getElementById('editCategoryModal').classList.add('active');
+    // Funcionalidad de búsqueda y notificaciones
+    // Búsqueda
+    const searchIcon = document.getElementById('searchIcon');
+    const searchBox = document.getElementById('searchBox');
+    const searchInput = document.getElementById('searchInput');
+    if (searchIcon && searchBox && searchInput) {
+        searchIcon.addEventListener('click', () => {
+            if (searchBox.style.display === 'none' || searchBox.style.display === '') {
+                searchBox.style.display = 'block';
+                searchInput.focus();
+            } else {
+                searchBox.style.display = 'none';
+            }
         });
-    });
 
-    // Elegir imagen
-    document.getElementById('chooseImageBtn').addEventListener('click', () => {
-        document.getElementById('categoryImageInput').click();
-    });
-
-    // Cerrar modal
-    document.getElementById('cancelEditCategory').addEventListener('click', () => {
-        document.getElementById('editCategoryModal').classList.remove('active');
-    });
-
-    // Cerrar modal al hacer clic fuera del contenido
-    document.getElementById('editCategoryModal').addEventListener('click', (e) => {
-        if (e.target === document.getElementById('editCategoryModal')) {
-            document.getElementById('editCategoryModal').classList.remove('active');
-        }
-    });
-
-    // Guardar (solo ejemplo)
-    document.getElementById('editCategoryForm').addEventListener('submit', (e) => {
-        e.preventDefault();
-        document.getElementById('editCategoryModal').classList.remove('active');
-        alert('Categoría guardada (ejemplo)');
-    });
-
-    // Añadir nueva categoría (demo)
-    const addBtn = document.querySelector('.add-btn');
-    if (addBtn) {
-        addBtn.addEventListener('click', () => {
-            alert('Añadir nueva categoría (demo)');
+        searchInput.addEventListener('input', () => {
+            const value = searchInput.value.trim().toLowerCase();
+            document.querySelectorAll('.product-card').forEach(card => {
+                const title = card.querySelector('.product-title').textContent.toLowerCase();
+                card.style.display = title.includes(value) ? '' : 'none';
+            });
         });
     }
 
-    // Eliminar categoría (demo)
-    document.querySelectorAll('.categories-list .fa-trash').forEach(btn => {
-        btn.addEventListener('click', () => {
-            alert('Eliminar categoría (demo)');
+    // Notificaciones
+    const notifIcon = document.getElementById('notifIcon');
+    const notifPanel = document.getElementById('notifPanel');
+    if (notifIcon && notifPanel) {
+        notifIcon.addEventListener('click', (e) => {
+            e.stopPropagation();
+            notifPanel.style.display = notifPanel.style.display === 'none' || notifPanel.style.display === '' ? 'block' : 'none';
         });
-    });
-
+        document.addEventListener('click', () => {
+            notifPanel.style.display = 'none';
+        });
+         notifPanel.addEventListener('click', e => e.stopPropagation());
+    }
 });
