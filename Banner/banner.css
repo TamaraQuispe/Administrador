@@ -395,3 +395,78 @@ main {
 .image-library-grid video:hover {
     border: 2px solid #a9004f;
 }
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    position: relative;
+    margin-left: auto;
+}
+.header-actions .search-icon,
+.header-actions .bell-icon {
+    font-size: 22px;
+    color: #222;
+    cursor: pointer;
+    margin-right: 4px;
+}
+.admin-menu-container {
+    position: relative;
+}
+.admin-btn {
+    background: #fff;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 7px 18px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: background 0.2s, border 0.2s;
+}
+.admin-btn:hover {
+    background: #f3e6ee;
+    border-color: #a9004f;
+}
+.admin-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 110%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px #0002;
+    min-width: 200px;
+    z-index: 100;
+    padding: 10px 0;
+    font-size: 15px;
+}
+.admin-dropdown.active {
+    display: block;
+}
+.admin-dropdown-header {
+    font-weight: 700;
+    padding: 10px 22px 8px 22px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 4px;
+    color: #222;
+}
+.admin-dropdown-item {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 10px 22px;
+    font-size: 15px;
+    color: #222;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.admin-dropdown-item:hover {
+    background: #f3e6ee;
+    color: #a9004f;
+}

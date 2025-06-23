@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>D'JULIA Panel - Productos</title>
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
+
 <body>
     <aside class="sidebar">
         <div class="logo">
@@ -40,9 +42,23 @@
                 <button class="add-product-btn">
                     <span class="material-icons">add</span> AGREGAR PRODUCTO
                 </button>
-                <span class="material-icons">search</span>
-                <div class="user-dropdown">
-                    <button class="user-btn">ADMIN <span class="material-icons">expand_more</span></button>
+
+            </div>
+            <div class="header-actions">
+                <span class="material-icons search-icon">search</span>
+                <span class="material-icons bell-icon">notifications</span>
+                <div class="admin-menu-container">
+                    <button class="admin-btn" id="adminMenuBtn">
+                        ADMIN <span class="material-icons"
+                            style="font-size:18px;vertical-align:middle;">expand_more</span>
+                    </button>
+                    <div class="admin-dropdown" id="adminDropdown">
+                        <div class="admin-dropdown-header">Admin</div>
+                        <button class="admin-dropdown-item cambiar" type="button">CAMBIAR CONTRASEÑA</button>
+                        <button class="admin-dropdown-item cerrar" type="button">CERRAR SESIÓN <span
+                                class="material-icons">logout</span></button>
+                        </span></button>
+                    </div>
                 </div>
             </div>
         </header>
@@ -66,4 +82,5 @@
     </main>
     <script src="productos.js"></script>
 </body>
+
 </html>

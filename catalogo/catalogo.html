@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <title>Catálogo | D'JULIA</title>
     <link rel="stylesheet" href="catalogo.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
 <body>
@@ -16,10 +17,10 @@
         </div>
         <nav>
             <ul>
-                <li class="active"><i class="fa fa-list"></i> CATÁLOGO</li>
-                <li><i class="fa fa-box"></i> TODOS LOS PRODUCTOS</li>
-                <li><i class="fa fa-image"></i> BANNER</li>
-                <li><i class="fa fa-bullhorn"></i> ANUNCIO</li>
+                <li><span class="material-icons">menu_book</span> CATALOGO</li>
+                <li class="active"><span class="material-icons">list_alt</span> TODOS LOS PRODUCTOS</li>
+                <li><span class="material-icons">image</span> BANNER</li>
+                <li><span class="material-icons">campaign</span> ANUNCIO</li>
             </ul>
         </nav>
         <div class="categories-title">
@@ -35,8 +36,21 @@
                 <span class="current">Home &gt; Catálogo</span>
             </div>
             <div class="header-actions">
-                <i class="fa fa-search"></i>
-                <button class="admin-btn">ADMIN <i class="fa fa-caret-down"></i></button>
+                <span class="material-icons search-icon">search</span>
+                <span class="material-icons bell-icon">notifications</span>
+                <div class="admin-menu-container">
+                    <button class="admin-btn" id="adminMenuBtn">
+                        ADMIN <span class="material-icons" style="font-size:18px;vertical-align:middle;"></span>
+                    </button>
+                    <div class="admin-dropdown" id="adminDropdown">
+                        <div class="admin-dropdown-header">Admin</div>
+                        <button class="admin-dropdown-item cambiar" type="button">CAMBIAR CONTRASEÑA</button>
+                        <button class="admin-dropdown-item cerrar" type="button">CERRAR SESIÓN <span
+                                class="material-icons">logout</span></button>
+                        </span></button>
+                        </span></button>
+                    </div>
+                </div>
             </div>
         </header>
         <div class="content">
@@ -44,44 +58,28 @@
                 <div class="categories-header">Categorías</div>
                 <ul class="categories-list">
                     <li>
-                        <button class="cat-color-btn" data-category="PANES">
-                            <img class="cat-color" src="icono-panes.png" alt="PANES">
-                        </button>
-                        <span class="cat-label">PANES (<span class="cat-count" data-category="PANES">3</span>)</span>
-                        <span class="cat-actions"></span>
+                        <span class="cat-color" style="background:#bdbdbd"></span>
+                        PANES (3)
                         <i class="fa fa-pen"></i>
                         <i class="fa fa-trash"></i>
-                        </span>
                     </li>
                     <li>
-                        <button class="cat-color-btn" data-category="POSTRES">
-                            <img class="cat-color" src="icono-postres.png" alt="POSTRES">
-                        </button>
-                        <span class="cat-label">POSTRES (<span class="cat-count" data-category="POSTRES">4</span>)</span>
-                        <span class="cat-actions"></span>
-                            <i class="fa fa-pen"></i>
-                            <i class="fa fa-trash"></i>
-                        </span>
-                    </li>
-                    <li>
-                        <button class="cat-color-btn" data-category="CUCHAREABLES">
-                            <img class="cat-color" src="icono-cuchareables.png" alt="CUCHAREABLES">
-                        </button>
-                        <span class="cat-label">CUCHAREABLES (<span class="cat-count" data-category="CUCHAREABLES">5</span>)</span>
-                        <span class="cat-actions"></span>
+                        <span class="cat-color" style="background:#bdbdbd"></span>
+                        POSTRES (4)
                         <i class="fa fa-pen"></i>
                         <i class="fa fa-trash"></i>
-                        </span>
                     </li>
                     <li>
-                        <button class="cat-color-btn" data-category="TORTAS">
-                            <img class="cat-color" src="icono-tortas.png" alt="TORTAS">
-                        </button>
-                        <span class="cat-label">TORTAS (<span class="cat-count" data-category="TORTAS">4</span>)</span>
-                        <span class="cat-actions"></span>
+                        <span class="cat-color" style="background:#bdbdbd"></span>
+                        CUCHAREABLES (5)
                         <i class="fa fa-pen"></i>
                         <i class="fa fa-trash"></i>
-                        </span>
+                    </li>
+                    <li>
+                        <span class="cat-color" style="background:#bdbdbd"></span>
+                        TORTAS (4)
+                        <i class="fa fa-pen"></i>
+                        <i class="fa fa-trash"></i>
                     </li>
                 </ul>
                 <div class="add-category">
@@ -90,34 +88,22 @@
                 </div>
             </div>
             <div class="products-panel">
-                <div class="product-card" data-category="PANES">
+                <div class="product-card">
                     <img src="pan1.jpg" alt="Hogaza de Tanta Zara">
                     <div class="product-title">Hogaza de Tanta Zara</div>
                 </div>
-                <div class="product-card" data-category="PANES">
+                <div class="product-card">
                     <img src="pan2.jpg" alt="Hogaza de granos andinos">
                     <div class="product-title">Hogaza de granos andinos</div>
                 </div>
-                <div class="product-card" data-category="PANES">
+                <div class="product-card">
                     <img src="pan3.jpg" alt="Mini artesanal Tanta Zara">
                     <div class="product-title">Mini artesanal Tanta Zara</div>
-                </div>
-                <div class="product-card" data-category="POSTRES" style="display:none">
-                    <img src="postre1.jpg" alt="Postre 1">
-                    <div class="product-title">Postre 1</div>
-                </div>
-                <div class="product-card" data-category="CUCHAREABLES" style="display:none">
-                    <img src="cuchareable1.jpg" alt="Cuchareable 1">
-                    <div class="product-title">Cuchareable 1</div>
-                </div>
-                <div class="product-card" data-category="TORTAS" style="display:none">
-                    <img src="torta1.jpg" alt="Torta 1">
-                    <div class="product-title">Torta 1</div>
                 </div>
             </div>
         </div>
         <footer>
-            <span>© 2025 · DJULIA</span>
+            <span>© 2025 · D'JULIA</span>
             <div class="footer-links">
                 <a href="#">About</a>
                 <a href="#">Careers</a>

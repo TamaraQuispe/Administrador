@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Banner - DJULIA</title>
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
+
 <body>
     <aside class="sidebar">
         <div class="logo">
@@ -36,6 +38,23 @@
                 <h2>Banner</h2>
                 <span class="breadcrumb">Home &gt; Banner</span>
             </div>
+            <div class="header-actions">
+                <span class="material-icons search-icon">search</span>
+                <span class="material-icons bell-icon">notifications</span>
+                <div class="admin-menu-container">
+                    <button class="admin-btn" id="adminMenuBtn">
+                        ADMIN <span class="material-icons"
+                            style="font-size:18px;vertical-align:middle;">expand_more</span>
+                    </button>
+                    <div class="admin-dropdown" id="adminDropdown">
+                        <div class="admin-dropdown-header">Admin</div>
+                        <button class="admin-dropdown-item cambiar" type="button">CAMBIAR CONTRASEÑA</button>
+                        <button class="admin-dropdown-item cerrar" type="button">CERRAR SESIÓN <span
+                                class="material-icons">logout</span></button>
+                        </span></button>
+                    </div>
+                </div>
+            </div>
         </header>
         <section class="banner-container">
             <div class="banner-left">
@@ -44,25 +63,36 @@
                     <button class="add-btn"><span class="material-icons">add</span></button>
                 </div>
                 <button class="banner-btn upload-btn"><span class="material-icons">upload</span> Subir</button>
-                <button class="banner-btn"><span class="material-icons">photo_library</span> Biblioteca de imágenes</button>
-                <button class="banner-btn"><span class="material-icons">video_library</span> Biblioteca de videos</button>
-                <input type="text" class="search-image-input" placeholder="Buscar imagen" disabled style="background:#e5e5e5; color:#888; margin:10px 0;">
+                <button class="banner-btn"><span class="material-icons">photo_library</span> Biblioteca de
+                    imágenes</button>
+                <button class="banner-btn"><span class="material-icons">video_library</span> Biblioteca de
+                    videos</button>
+                <input type="text" class="search-image-input" placeholder="Buscar imagen" disabled
+                    style="background:#e5e5e5; color:#888; margin:10px 0;">
                 <div class="banner-thumbs">
-                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="thumb1">
-                    <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80" alt="thumb2">
-                    <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="thumb3">
-                    <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="thumb4">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80"
+                        alt="thumb1">
+                    <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80"
+                        alt="thumb2">
+                    <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80"
+                        alt="thumb3">
+                    <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
+                        alt="thumb4">
                 </div>
                 <button class="delete-banner-btn"><span class="material-icons">delete</span> Eliminar banner</button>
             </div>
             <div class="banner-right">
                 <span class="banner-actual-title">Banner Actual</span>
                 <div class="banner-actual-img" id="mainBannerContainer">
-                    <img id="mainBannerImg" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Banner Actual">
+                    <img id="mainBannerImg"
+                        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80"
+                        alt="Banner Actual">
                 </div>
                 <div class="banner-actual-thumbs">
-                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="thumb1" class="thumb-active">
-                    <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80" alt="thumb2">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80"
+                        alt="thumb1" class="thumb-active">
+                    <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80"
+                        alt="thumb2">
                 </div>
             </div>
         </section>
@@ -107,4 +137,5 @@
 
     <script src="banner.js"></script>
 </body>
+
 </html>

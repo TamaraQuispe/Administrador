@@ -6,9 +6,42 @@ document.addEventListener('DOMContentLoaded', () => {
     if (productosBtn) productosBtn.addEventListener('click', () => window.location.href = '../productos/productos.html');
     const bannerBtn = document.querySelectorAll('.sidebar nav ul li')[2];
     if (bannerBtn) bannerBtn.addEventListener('click', () => window.location.href = '../Banner/banner.html');
+    const anuncioBtn = document.querySelectorAll('.sidebar nav ul li')[3];
+    if (anuncioBtn) anuncioBtn.addEventListener('click', () => window.location.href = '../Anuncios/anuncio.html');
+
+    // Menú Admin Header
+    const adminBtn = document.getElementById('adminMenuBtn');
+    const adminDropdown = document.getElementById('adminDropdown');
+    if (adminBtn && adminDropdown) {
+        adminBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            adminDropdown.classList.toggle('active');
+        });
+        document.addEventListener('click', () => {
+            adminDropdown.classList.remove('active');
+        });
+        adminDropdown.addEventListener('click', (e) => e.stopPropagation());
+    }
+
+    // Funcionalidad para Cambiar Contraseña y Cerrar Sesión
+    // Asegúrate que los botones tengan las clases: cambiar y cerrar
+    const cambiarBtn = document.querySelector('.admin-dropdown-item.cambiar');
+    const cerrarBtn = document.querySelector('.admin-dropdown-item.cerrar');
+    if (cambiarBtn) {
+        cambiarBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = '../Cambiar-contraseña/cambiar-contraseña.html';
+        });
+    }
+    if (cerrarBtn) {
+        cerrarBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = '../Loggin/loggin.html';
+        });
+    }
 
     // Función para mostrar imagen o video como banner actual
-    function setBannerMedia({type, url, alt}) {
+    function setBannerMedia({ type, url, alt }) {
         const container = document.getElementById('mainBannerContainer');
         container.innerHTML = '';
         if (type === 'image') {
@@ -33,26 +66,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Cambiar banner actual al hacer clic en miniaturas de la derecha (IMAGEN)
     const rightThumbs = document.querySelectorAll('.banner-actual-thumbs img');
     rightThumbs.forEach(thumb => {
-        thumb.addEventListener('click', function() {
+        thumb.addEventListener('click', function () {
             rightThumbs.forEach(t => t.classList.remove('thumb-active'));
             this.classList.add('thumb-active');
-            setBannerMedia({type: 'image', url: this.src, alt: this.alt});
+            setBannerMedia({ type: 'image', url: this.src, alt: this.alt });
         });
     });
 
     // Cambiar banner actual al hacer clic en miniaturas de la izquierda (IMAGEN)
     const leftThumbs = document.querySelectorAll('.banner-thumbs img');
     leftThumbs.forEach(thumb => {
-        thumb.addEventListener('click', function() {
-            setBannerMedia({type: 'image', url: this.src, alt: this.alt});
+        thumb.addEventListener('click', function () {
+            setBannerMedia({ type: 'image', url: this.src, alt: this.alt });
         });
     });
 
     // Eliminar banner (solo ejemplo)
     const deleteBtn = document.querySelector('.delete-banner-btn');
     if (deleteBtn) {
-        deleteBtn.addEventListener('click', function() {
-            setBannerMedia({type: 'image', url: '', alt: ''});
+        deleteBtn.addEventListener('click', function () {
+            setBannerMedia({ type: 'image', url: '', alt: '' });
             alert('Banner eliminado (solo ejemplo visual)');
         });
     }
@@ -77,8 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (fileInput.files.length > 0) {
             const file = fileInput.files[0];
             const reader = new FileReader();
-            reader.onload = function(e) {
-                setBannerMedia({type: 'image', url: e.target.result, alt: file.name});
+            reader.onload = function (e) {
+                setBannerMedia({ type: 'image', url: e.target.result, alt: file.name });
             };
             reader.readAsDataURL(file);
         }
@@ -116,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imageElem.alt = img.name;
             imageElem.title = img.name;
             imageElem.addEventListener('click', () => {
-                setBannerMedia({type: 'image', url: img.url, alt: img.name});
+                setBannerMedia({ type: 'image', url: img.url, alt: img.name });
                 imageLibraryModal.classList.remove('active');
             });
             imageLibraryGrid.appendChild(imageElem);
@@ -177,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
             videoElem.addEventListener('mouseenter', () => videoElem.play());
             videoElem.addEventListener('mouseleave', () => { videoElem.pause(); videoElem.currentTime = 0; });
             videoElem.addEventListener('click', () => {
-                setBannerMedia({type: 'video', url: vid.url});
+                setBannerMedia({ type: 'video', url: vid.url });
                 videoLibraryModal.classList.remove('active');
             });
             videoLibraryGrid.appendChild(videoElem);

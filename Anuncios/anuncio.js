@@ -1,32 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Redirección al hacer clic en "CATALOGO"
+    // Redirección menú lateral
     const catalogoBtn = document.querySelectorAll('.sidebar nav ul li')[0];
-    if (catalogoBtn) {
-        catalogoBtn.addEventListener('click', function () {
-            window.location.href = '../catalogo/catalogo.html';
-        });
-    }
-    // Redirección a productos
+    if (catalogoBtn) catalogoBtn.addEventListener('click', () => window.location.href = '../catalogo/catalogo.html');
     const productosBtn = document.querySelectorAll('.sidebar nav ul li')[1];
-    if (productosBtn) {
-        productosBtn.addEventListener('click', function () {
-            window.location.href = '../productos/productos.html';
-        });
-    }
-    // Redirección a Banner
+    if (productosBtn) productosBtn.addEventListener('click', () => window.location.href = '../productos/productos.html');
     const bannerBtn = document.querySelectorAll('.sidebar nav ul li')[2];
-    if (bannerBtn) {
-        bannerBtn.addEventListener('click', function () {
-            window.location.href = '../Banner/banner.html';
-        });
-    }
-    // Redirección a Anuncios
+    if (bannerBtn) bannerBtn.addEventListener('click', () => window.location.href = '../Banner/banner.html');
     const anuncioBtn = document.querySelectorAll('.sidebar nav ul li')[3];
-    if (anuncioBtn) {
-        anuncioBtn.addEventListener('click', function () {
-            window.location.href = '../Anuncios/anuncio.html';
-        });
-    }
+    if (anuncioBtn) anuncioBtn.addEventListener('click', () => window.location.href = '../Anuncios/anuncio.html');
 
     // Menú Admin Header
     const adminBtn = document.getElementById('adminMenuBtn');
@@ -46,32 +27,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const cambiarBtn = document.querySelector('.admin-dropdown-item.cambiar');
     const cerrarBtn = document.querySelector('.admin-dropdown-item.cerrar');
     if (cambiarBtn) {
-        cambiarBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.location.href = '../Cambiar-Contraseña/cambiar-contraseña.html';
+        cambiarBtn.addEventListener('click', () => {
+            window.location.href = '../Cambiar-contraseña/cambiar-contraseña.html';
         });
     }
     if (cerrarBtn) {
-        cerrarBtn.addEventListener('click', (e) => {
-            e.preventDefault();
+        cerrarBtn.addEventListener('click', () => {
             window.location.href = '../Loggin/loggin.html';
         });
     }
 
-    // Opcional: Manejo de subida de imagen (solo muestra el nombre)
-    const fileInput = document.querySelector('.gallery-upload input[type="file"]');
-    if (fileInput) {
-        fileInput.addEventListener('change', function () {
+    // Mostrar nombre de archivo seleccionado
+    const fileInput = document.getElementById('anuncioFileInput');
+    const fileUploadBox = document.getElementById('fileUploadBox');
+    if (fileInput && fileUploadBox) {
+        fileInput.addEventListener('change', () => {
             if (fileInput.files.length > 0) {
-                alert('Imagen seleccionada: ' + fileInput.files[0].name);
+                let names = Array.from(fileInput.files).map(f => f.name).join(', ');
+                fileUploadBox.querySelector('.upload-text p').textContent = names;
+            } else {
+                fileUploadBox.querySelector('.upload-text p').textContent =
+                    'Tipos de archivo que puedas subir: PDF, PPT, Word, Excel, JPG, mp3, mp4, zip o rar';
             }
         });
     }
+
     // Cancelar vuelve a productos
     const cancelBtn = document.querySelector('.btn-cancel');
     if (cancelBtn) {
         cancelBtn.addEventListener('click', function () {
             window.location.href = '../productos/productos.html';
+        });
+    }
+
+    const form = document.querySelector('.anuncio-form');
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Anuncio guardado (ejemplo visual)');
         });
     }
 });
