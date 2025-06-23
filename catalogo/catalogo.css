@@ -426,27 +426,24 @@ footer {
 }
 
 @media (max-width: 1100px) {
-    .products-panel {
-        grid-template-columns: 1fr 1fr;
+    .anuncio-container {
+        max-width: 100%;
+    }
+    .anuncio-form {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .anuncio-form-left, .anuncio-form-right {
+        min-width: 0;
     }
 }
-
-@media (max-width: 800px) {
-    .sidebar {
-        display: none;
+@media (max-width: 700px) {
+    .main-header, .anuncio-container, .main-footer {
+        padding-left: 12px;
+        padding-right: 12px;
     }
-
-    .main-content {
-        margin-left: 0;
-    }
-
-    .content {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-    }
-
-    .products-panel {
-        grid-template-columns: 1fr;
+    .anuncio-container {
+        margin: 18px 0 0 0;
+        padding: 18px 8px 12px 8px;
     }
 }
