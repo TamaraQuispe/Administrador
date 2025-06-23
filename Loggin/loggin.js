@@ -1,10 +1,6 @@
 document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // Valores válidos de ejemplo
-    const validUser = "admin";
-    const validPassword = "1234";
-
     const user = document.getElementById('user').value.trim();
     const password = document.getElementById('password').value.trim();
 
@@ -13,10 +9,18 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         return;
     }
 
-    if (user === validUser && password === validPassword) {
-        alert("¡Login exitoso!");
-        window.location.href = '../Catalogo/catalogo.html'; 
-    } else {
-        alert("Usuario o contraseña incorrectos.");
-    }
+    fetch('../Loggin/validar_login.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ usuario: user, contrasena: password })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            alert("¡Login exitoso!");
+            window.location.href = '../Catalogo/catalogo.html';
+        } else {
+            alert(data.message || "Usuario o contraseña incorrectos.");
+        }
+    });
 });
