@@ -1,4 +1,4 @@
-document.getElementById('loginForm').addEventListener('submit', function(e) {
+document.getElementById('loginForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
     const user = document.getElementById('user').value.trim();
@@ -9,18 +9,23 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         return;
     }
 
-    fetch('../Loggin/validar_login.php', {
+    fetch('validar_login.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ usuario: user, contrasena: password })
     })
-    .then(res => res.json())
-    .then(data => {
-        if (data.success) {
-            alert("¡Login exitoso!");
-            window.location.href = '../Catalogo/catalogo.html';
-        } else {
-            alert(data.message || "Usuario o contraseña incorrectos.");
-        }
-    });
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                alert("¡Login exitoso!");
+                window.location.href = '../Catalogo/catalogo.html';
+            } else {
+                alert(data.message || "Usuario o contraseña incorrectos.");
+            }
+        })
+        .catch(error => {
+            alert("Error en la conexión con el servidor.");
+            console.error(error);
+        });
+
 });

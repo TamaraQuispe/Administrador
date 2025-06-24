@@ -1,6 +1,14 @@
 <?php
-// filepath: c:\Users\LAB-USR-LNORTE\Downloads\Administrador\Loggin\validar_login.php
 
+// Mostrar errores para depuración (esto debe ir al inicio)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Asegura que la respuesta sea JSON
+header('Content-Type: application/json');
+
+// Tu código de login
 $data = json_decode(file_get_contents('php://input'), true);
 
 if (!$data || !isset($data['usuario']) || !isset($data['contrasena'])) {
@@ -15,6 +23,10 @@ if (!file_exists($path)) {
     exit;
 }
 $lines = file($path, FILE_IGNORE_NEW_LINES);
+if (count($lines) < 2) {
+    echo json_encode(['success' => false, 'message' => 'Archivo de usuario corrupto']);
+    exit;
+}
 $savedUser = $lines[0];
 $savedHash = $lines[1];
 
@@ -24,4 +36,5 @@ if ($data['usuario'] === $savedUser && password_verify($data['contrasena'], $sav
 } else {
     echo json_encode(['success' => false, 'message' => 'Usuario o contraseña incorrectos']);
 }
+
 ?>
